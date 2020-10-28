@@ -1,0 +1,63 @@
+<style>
+header, nav, article, aside, footer {
+  border: 1px solid gray;
+}
+header, nav, article, aside {
+  margin-bottom: 1em;
+}
+article, footer {
+  min-height: 100vh;
+}
+aside {
+  min-height: 20vh;
+}
+@supports (display: grid) {
+  @media (min-width: 20em) {
+    body {
+      display: grid;
+      grid-template-columns: 1fr minmax(0, 40em) 1em minmax(0, 15em) 1fr;
+      grid-template-rows: repeat(3, auto 1em) 1fr 1em auto;
+    }
+    header, nav, article, aside {
+      margin: 0;
+    }
+    header, footer, nav {
+      grid-column: 2/5;
+    }
+    nav {
+      grid-row: 3/4;  
+    }
+    article {
+      grid-column: 2/3;
+      grid-row: 5/8;
+    }
+    [id^="right"] {
+      grid-column: 4/5;
+    }
+    #right1 {
+      grid-row: 5/6;
+    }
+    #right2 {
+      grid-row: 7/8;
+    }
+    .sticky {
+      position: sticky;
+      top: 0;
+    }
+    footer {
+      grid-row: 9/10;
+    }
+  }
+}
+</style>
+
+<header>Название</header>
+<nav>Меню</nav>
+<article>Основная часть</article>
+<div id="right2">
+  <aside class="sticky">Прилипающая часть</aside>
+</div>
+<aside id="right1"><script src="https://apis.google.com/js/platform.js"></script>
+
+<div class="g-ytsubscribe" data-channelid="UClLR0qNwf0LrMPZjyhDUSmQ" data-layout="full" data-count="default"></div></aside>
+<footer>Подвал</footer>
